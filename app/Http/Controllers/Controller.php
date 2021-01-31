@@ -22,8 +22,8 @@ class Controller extends BaseController
          * 
          * To avoid propogation of changes from coindesk api in the future 
          */
-
-        $json = file_get_contents("https://api.coindesk.com/v1/bpi/historical/close.json?start=$from&?end=$to");
+        $json = file_get_contents("https://api.coindesk.com/v1/bpi/historical/close.json?start=$from&end=$to");
+        // $json = file_get_contents("https://api.coindesk.com/v1/bpi/historical/close.json?start=2013-09-01&end=2013-09-05");
         $data = json_decode($json);
         return json_encode($data->bpi);
     }
